@@ -11,8 +11,6 @@
 <body>
     <table table class="table table-hover ">
             <tr class="bg-dark text-primary">
-
-                <th scope="col">Id</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Username</th>
@@ -22,7 +20,7 @@
 
         {% for item in rows %}
             <tr>
-                <td scope="col">{{rows[item]}}</td>
+        
                 <td scope="col">{{item[0]}}</td>
                 <td scope="col">{{item[1]}}</td>
                 <td scope="col">{{item[2]}}</td>
