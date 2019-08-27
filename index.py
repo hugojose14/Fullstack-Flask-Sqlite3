@@ -32,6 +32,15 @@ def get_users():
    rows = cur.fetchall()
    return render_template("users.html",rows = rows)
 
+@app.route('/api/v1/users')
+def lista2():
+
+    con = sqlite3.connect('./database/users.db')
+    cur = con.cursor()
+    cur.execute("select * from users")
+    valores = cur.fetchall()
+    return jsonify(valores)
+
 @app.errorhandler(404)
 def page_not_found(error):
 	return render_template("error.html",error="Página no encontrada..."), 404
